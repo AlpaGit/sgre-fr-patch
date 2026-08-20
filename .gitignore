@@ -1,0 +1,15 @@
+# System / editors
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Local release artifacts
+dist/
+*.zip
+*.tmp
+*.log

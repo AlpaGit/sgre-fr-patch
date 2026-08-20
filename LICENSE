@@ -1,0 +1,49 @@
+Cette release contient deux types de contenus soumis à des licences différentes.
+
+================================================================================
+1. Code de l'installeur
+================================================================================
+
+MIT License
+
+Copyright (c) 2026 Contributeurs de la VF STEINS;GATE RE:BOOT
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+2. Contenu textuel de la traduction
+================================================================================
+
+Le contenu textuel de la traduction française est mis à disposition sous licence
+Creative Commons Attribution - Pas d'Utilisation Commerciale - Partage dans les
+Mêmes Conditions 4.0 International (CC BY-NC-SA 4.0).
+
+https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fr
+
+Attribution : créditez ce projet et fournissez un lien vers son dépôt GitHub.
+Utilisation commerciale interdite. Toute adaptation doit employer la même licence.
+
+================================================================================
+3. Oeuvre originale
+================================================================================
+
+STEINS;GATE RE:BOOT, ses personnages, son scénario, ses illustrations, ses musiques,
+ses vidéos et son moteur sont la propriété de MAGES. / 5pb. / Nitroplus et de leurs
+ayants droit respectifs. Ce patch fan-made, non officiel et gratuit nécessite une copie
+légitime du jeu. Il sera retiré à la demande d'un ayant droit.

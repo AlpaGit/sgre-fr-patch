@@ -36,5 +36,5 @@ Les PR sont bienvenues pour la documentation et l'installeur. Les sources de tra
 scénario ne sont pas publiées dans ce dépôt; pour une correction textuelle, commencez par
 une issue afin qu'elle soit intégrée puis recompilée dans les deux archives.
 
-Ne joignez aucun fichier original du jeu, capture contenant un spoil non signalé, archive
-vanille, vidéo ou ressource protégée.
+Ne joignez aucun fichier original non modifié du jeu ni capture contenant un spoil non signalé.
+Les corrections apportées aux fichiers ASS de `sources/video` sont les bienvenues.

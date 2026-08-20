@@ -14,10 +14,15 @@ Le dossier attendu ressemble à ceci :
 …\steamapps\common\SGRE\
 └── wind3d11data\
     ├── scenario_info.psb.m
-    └── scenario_body.bin
+    ├── scenario_body.bin
+    └── movie\
+        ├── prologue01_en.webm
+        ├── prologue02_en.webm
+        └── prologue03_en.webm
 ```
 
-Les originaux sont conservés dans le même dossier avec l'extension `.bak`.
+Les archives originales sont conservées avec l'extension `.bak`. Les vidéos originales sont
+conservées avec l'extension `.frpatch.bak`.
 
 ### Si le jeu n'est pas détecté
 
@@ -33,8 +38,11 @@ G:\SteamLibrary\steamapps\common\SGRE
 1. Ouvrez `…\steamapps\common\SGRE\wind3d11data\`.
 2. Sauvegardez `scenario_info.psb.m` en `scenario_info.psb.m.bak`.
 3. Sauvegardez `scenario_body.bin` en `scenario_body.bin.bak`.
-4. Copiez les deux fichiers du dossier `patch\` de la release dans `wind3d11data\`.
-5. Acceptez le remplacement, puis lancez le jeu.
+4. Sauvegardez les trois fichiers `prologue0*_en.webm` de `wind3d11data\movie\` en leur
+   ajoutant l'extension `.frpatch.bak`.
+5. Copiez les deux archives du dossier `patch\` dans `wind3d11data\`.
+6. Copiez les trois vidéos de `patch\movie\` dans `wind3d11data\movie\`.
+7. Acceptez les remplacements, puis lancez le jeu.
 
 Les deux fichiers forment une paire : ne remplacez jamais l'un sans l'autre.
 
@@ -50,6 +58,6 @@ Le chemin peut varier selon la bibliothèque Steam choisie.
 
 ## Désinstallation
 
-Sous Windows, lancez `uninstall.bat`. Manuellement, recopiez les deux `.bak` par-dessus
-les fichiers actifs. Si les sauvegardes manquent, demandez à Steam de vérifier l'intégrité
-des fichiers.
+Sous Windows, lancez `uninstall.bat`. Manuellement, recopiez les deux `.bak` et les trois
+`.frpatch.bak` par-dessus les fichiers actifs. Si les sauvegardes manquent, demandez à Steam
+de vérifier l'intégrité des fichiers.

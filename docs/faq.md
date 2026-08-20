@@ -10,11 +10,15 @@ remplacés dans `wind3d11data`. Évitez de lancer l'installeur depuis l'intérie
 Oui. Le patch remplace les archives de scénario, pas les sauvegardes utilisateur. Vous
 pouvez revenir à l'anglais avec `uninstall.bat` sans perdre votre progression.
 
-### Pourquoi certaines vidéos du prologue restent-elles en anglais ?
+### Pourquoi le texte anglais reste-t-il visible dans les vidéos du prologue ?
 
-Le texte de trois vidéos WebM est incrusté directement dans l'image et les fichiers sont
-chiffrés par le jeu. Le patch des scripts ne peut pas modifier ce texte. Leur adaptation
-demande une chaîne distincte de déchiffrement, montage et réencodage.
+L'introduction n'est pas une scène de dialogue ordinaire. Le texte anglais est incrusté
+directement dans l'image des trois fichiers `prologue01_en.webm`, `prologue02_en.webm` et
+`prologue03_en.webm`. Il ne peut donc pas être désactivé comme une piste de sous-titres.
+
+La v1.1.0 ajoute la traduction française au bas de l'écran sans masquer l'animation. Ses timings
+suivent directement l'apparition et la disparition de chaque phrase anglaise, détectées par
+comparaison d'images et OCR.
 
 ### Pourquoi certains menus restent-ils en anglais ?
 

@@ -1,0 +1,31 @@
+[Script Info]
+Title: STEINS;GATE RE:BOOT - Prologue 03 FR
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+YCbCr Matrix: TV.709
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: FR,Arial,44,&H00FFFFFF,&H000000FF,&H00101010,&H80000000,0,0,0,0,100,100,0,0,1,3,1,2,120,120,80,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:04.50,0:00:08.50,FR,,0,0,0,,Pardon ? Tu as bien dit « Gifted Boy » ? Et alors ?
+Dialogue: 0,0:00:09.00,0:00:15.00,FR,,0,0,0,,Il s'imagine avoir complètement dupé Dieu.\NIl croit être parvenu à interférer avec les lois qui régissent toute chose.
+Dialogue: 0,0:00:15.50,0:00:17.50,FR,,0,0,0,,Oh, attends une seconde.
+Dialogue: 0,0:00:18.50,0:00:29.00,FR,,0,0,0,,Pff, cette chanson est trop lugubre.\NVoyons voir, et celle-là... Stop ! Ouais, c'est la bonne.
+Dialogue: 0,0:00:30.50,0:00:33.00,FR,,0,0,0,,Hein ? Ouais, tout va bien. Bref...
+Dialogue: 0,0:00:35.50,0:00:41.50,FR,,0,0,0,,Renverser l'ordre de la création ? C'est le péché parmi les péchés.\NUn jour, ce péché sera observé, ce qui le fera converger puis s'effondrer.\NEt quand cela arrivera, quel prix le monde devra-t-il payer ?
+Dialogue: 0,0:00:43.50,0:00:48.50,FR,,0,0,0,,Le prix du péché de l'homme est immense.\NAinsi parla le dieu du parc Inokashira.
+Dialogue: 0,0:00:49.50,0:00:54.50,FR,,0,0,0,,L'histoire d'un homme et de ses amis,\Nqu'il baptisa « Steins Gate »...
+Dialogue: 0,0:00:56.00,0:01:01.50,FR,,0,0,0,,C'est dommage, mais quand on regarde les notes,\Nil est assez évident que le monde lui-même finira par l'annuler.
+Dialogue: 0,0:01:02.00,0:01:04.50,FR,,0,0,0,,Si j'avais noté des détails comme la date et l'heure, j'aurais pu...
+Dialogue: 0,0:01:08.00,0:01:12.50,FR,,0,0,0,,Hein ? Un verrouillage de phase ? À ce stade ?\NÇa me paraît assez mal avisé.
+Dialogue: 0,0:01:14.50,0:01:21.00,FR,,0,0,0,,Euh, tu sais que l'affaire est réglée, pas vrai !?\NC'est pour ça que je... Hein ? Allô ? Allôôô ?
+Dialogue: 0,0:01:21.50,0:01:22.50,FR,,0,0,0,,Déconnecté.
+Dialogue: 0,0:01:23.50,0:01:28.50,FR,,0,0,0,,Aah, quelle peur. Trop effrayaaant.
+Dialogue: 0,0:01:29.50,0:01:33.00,FR,,0,0,0,,L'histoire d'un nouveau dieu, hein.
+Dialogue: 0,0:01:34.00,0:01:39.50,FR,,0,0,0,,Sérieux, on va finir avec combien de dieux, au juste ?

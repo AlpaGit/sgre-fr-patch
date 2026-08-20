@@ -70,16 +70,22 @@ if (-not (Test-Path -LiteralPath $gameDir)) {
 }
 Write-Ok "Jeu trouve : $gameDir"
 
-Write-Step 2 2 "Restauration des archives originales..."
+Write-Step 2 2 "Restauration des fichiers originaux..."
 $dataDir = Join-Path $gameDir 'wind3d11data'
 $targetInfo = Join-Path $dataDir 'scenario_info.psb.m'
 $targetBody = Join-Path $dataDir 'scenario_body.bin'
 $backupInfo = "$targetInfo.bak"
 $backupBody = "$targetBody.bak"
+$movieDir = Join-Path $dataDir 'movie'
+$movieNames = @('prologue01_en.webm', 'prologue02_en.webm', 'prologue03_en.webm')
 
 $missing = @()
 if (-not (Test-Path -LiteralPath $backupInfo)) { $missing += 'scenario_info.psb.m.bak' }
 if (-not (Test-Path -LiteralPath $backupBody)) { $missing += 'scenario_body.bin.bak' }
+foreach ($name in $movieNames) {
+    $backup = "$(Join-Path $movieDir $name).frpatch.bak"
+    if (-not (Test-Path -LiteralPath $backup)) { $missing += "$name.frpatch.bak" }
+}
 if ($missing.Count -gt 0) {
     Write-Fail ("Sauvegarde(s) manquante(s) : " + ($missing -join ', '))
     Write-Host "  Utilisez Steam > Proprietes > Fichiers installes > Verifier l'integrite." -ForegroundColor Yellow
@@ -88,7 +94,11 @@ if ($missing.Count -gt 0) {
 
 Copy-Item -LiteralPath $backupInfo -Destination $targetInfo -Force
 Copy-Item -LiteralPath $backupBody -Destination $targetBody -Force
-Write-Ok "Les deux archives originales ont ete restaurees."
+foreach ($name in $movieNames) {
+    $target = Join-Path $movieDir $name
+    Copy-Item -LiteralPath "$target.frpatch.bak" -Destination $target -Force
+}
+Write-Ok "Les archives et les trois videos originales ont ete restaurees."
 
 Write-Host ""
 Write-Host "  ============================================================" -ForegroundColor Green

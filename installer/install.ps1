@@ -8,6 +8,11 @@ $ErrorActionPreference = 'Stop'
 
 $ExpectedInfoHash = '23C8402ED65DD5924AFC88D2FE3BB2BCD4CC62EE0AC9C9A11078CFE1C6E3DD71'
 $ExpectedBodyHash = '5017935453AFC41C3B1ED314FEEB3C11157EEBC8316D468792375E254476994E'
+$ExpectedMovieHashes = [ordered]@{
+    'prologue01_en.webm' = '25FD6319AEFF66DC99A5395265D8FBBF46E3FD997F81EBE404204F4D2EEABBAB'
+    'prologue02_en.webm' = '1C97525B9F9833B924181AE5C94C92EA37C272A682ECBA2D6310EF049CEFB285'
+    'prologue03_en.webm' = 'D87E0941643535883130D44A658FF4CE484C1D1CA3A83BB3F0085A40735F34D9'
+}
 
 function Write-Step($n, $total, $msg) {
     Write-Host ""
@@ -63,16 +68,21 @@ Write-Host "             Patch FR - STEINS;GATE RE:BOOT" -ForegroundColor Magent
 Write-Host "                       Installation" -ForegroundColor Magenta
 Write-Host "  ============================================================" -ForegroundColor Magenta
 Write-Host ""
-Write-Host "  Ce script va reperer le jeu, sauvegarder les deux archives" -ForegroundColor Gray
-Write-Host "  de scenario originales, puis installer la traduction." -ForegroundColor Gray
+Write-Host "  Ce script va reperer le jeu, sauvegarder les archives de" -ForegroundColor Gray
+Write-Host "  scenario et les trois videos, puis installer la traduction." -ForegroundColor Gray
 
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $repoRoot = Split-Path -Parent $scriptDir
 $patchDir = Join-Path $repoRoot 'patch'
 $frInfo = Join-Path $patchDir 'scenario_info.psb.m'
 $frBody = Join-Path $patchDir 'scenario_body.bin'
+$frMovieDir = Join-Path $patchDir 'movie'
+$frMovies = [ordered]@{}
+foreach ($name in $ExpectedMovieHashes.Keys) {
+    $frMovies[$name] = Join-Path $frMovieDir $name
+}
 
-foreach ($file in @($frInfo, $frBody)) {
+foreach ($file in @($frInfo, $frBody) + @($frMovies.Values)) {
     if (-not (Test-Path -LiteralPath $file)) {
         Write-Fail "Fichier du patch introuvable : $file"
         Write-Host "  Telechargez et decompressez l'archive complete de la release." -ForegroundColor Red
@@ -85,6 +95,12 @@ if ((Get-FileHash -Algorithm SHA256 -LiteralPath $frInfo).Hash -ne $ExpectedInfo
     Write-Fail "Les fichiers du patch sont incomplets ou corrompus."
     Write-Host "  Telechargez de nouveau l'archive depuis GitHub Releases." -ForegroundColor Red
     Pause-And-Exit 1
+}
+foreach ($name in $ExpectedMovieHashes.Keys) {
+    if ((Get-FileHash -Algorithm SHA256 -LiteralPath $frMovies[$name]).Hash -ne $ExpectedMovieHashes[$name]) {
+        Write-Fail "Video du patch incomplete ou corrompue : $name"
+        Pause-And-Exit 1
+    }
 }
 
 Write-Step 1 4 "Recherche du jeu..."
@@ -106,7 +122,12 @@ Write-Step 2 4 "Verification de la structure du jeu..."
 $dataDir = Join-Path $gameDir 'wind3d11data'
 $targetInfo = Join-Path $dataDir 'scenario_info.psb.m'
 $targetBody = Join-Path $dataDir 'scenario_body.bin'
-foreach ($file in @($targetInfo, $targetBody)) {
+$movieDir = Join-Path $dataDir 'movie'
+$targetMovies = [ordered]@{}
+foreach ($name in $ExpectedMovieHashes.Keys) {
+    $targetMovies[$name] = Join-Path $movieDir $name
+}
+foreach ($file in @($targetInfo, $targetBody) + @($targetMovies.Values)) {
     if (-not (Test-Path -LiteralPath $file)) {
         Write-Fail "Archive originale introuvable : $file"
         Write-Host "  Verifiez qu'il s'agit bien de STEINS;GATE RE:BOOT sur Steam." -ForegroundColor Red
@@ -115,7 +136,7 @@ foreach ($file in @($targetInfo, $targetBody)) {
 }
 Write-Ok "Structure du jeu valide."
 
-Write-Step 3 4 "Sauvegarde des archives originales..."
+Write-Step 3 4 "Sauvegarde des fichiers originaux..."
 $backupInfo = "$targetInfo.bak"
 $backupBody = "$targetBody.bak"
 $currentInfoHash = (Get-FileHash -Algorithm SHA256 -LiteralPath $targetInfo).Hash
@@ -140,10 +161,29 @@ if (Test-Path -LiteralPath $backupBody) {
     Copy-Item -LiteralPath $targetBody -Destination $backupBody
     Write-Ok "Sauvegarde creee : scenario_body.bin.bak"
 }
+foreach ($name in $ExpectedMovieHashes.Keys) {
+    $target = $targetMovies[$name]
+    $backup = "$target.frpatch.bak"
+    $currentHash = (Get-FileHash -Algorithm SHA256 -LiteralPath $target).Hash
+    if ($currentHash -eq $ExpectedMovieHashes[$name] -and -not (Test-Path -LiteralPath $backup)) {
+        Write-Fail "La video $name semble deja patchee, mais sa sauvegarde manque."
+        Write-Host "  Verifiez d'abord l'integrite des fichiers du jeu dans Steam." -ForegroundColor Red
+        Pause-And-Exit 1
+    }
+    if (Test-Path -LiteralPath $backup) {
+        Write-Ok "Sauvegarde existante conservee : $name.frpatch.bak"
+    } else {
+        Copy-Item -LiteralPath $target -Destination $backup
+        Write-Ok "Sauvegarde creee : $name.frpatch.bak"
+    }
+}
 
 Write-Step 4 4 "Installation de la traduction francaise..."
 Copy-Item -LiteralPath $frInfo -Destination $targetInfo -Force
 Copy-Item -LiteralPath $frBody -Destination $targetBody -Force
+foreach ($name in $ExpectedMovieHashes.Keys) {
+    Copy-Item -LiteralPath $frMovies[$name] -Destination $targetMovies[$name] -Force
+}
 
 $installedInfoHash = (Get-FileHash -Algorithm SHA256 -LiteralPath $targetInfo).Hash
 $installedBodyHash = (Get-FileHash -Algorithm SHA256 -LiteralPath $targetBody).Hash
@@ -151,7 +191,13 @@ if ($installedInfoHash -ne $ExpectedInfoHash -or $installedBodyHash -ne $Expecte
     Write-Fail "La verification des fichiers installes a echoue."
     Pause-And-Exit 1
 }
-Write-Ok "Les deux archives ont ete installees et verifiees."
+foreach ($name in $ExpectedMovieHashes.Keys) {
+    if ((Get-FileHash -Algorithm SHA256 -LiteralPath $targetMovies[$name]).Hash -ne $ExpectedMovieHashes[$name]) {
+        Write-Fail "La verification de la video installee a echoue : $name"
+        Pause-And-Exit 1
+    }
+}
+Write-Ok "Les archives et les trois videos ont ete installees et verifiees."
 
 Write-Host ""
 Write-Host "  ============================================================" -ForegroundColor Green

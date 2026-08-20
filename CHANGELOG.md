@@ -3,6 +3,21 @@
 Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) et la numérotation
 suit [SemVer](https://semver.org/lang/fr/).
 
+## [1.1.0] — 2026-08-21
+
+### Ajouté
+
+- Sous-titres français pour les trois vidéos d'introduction du prologue.
+- Détection des timings à partir de la visibilité du texte anglais par comparaison d'images
+  et OCR.
+- Sauvegarde, installation, vérification SHA-256 et restauration automatiques des vidéos.
+- Publication des fichiers ASS français dans `sources/video`.
+
+### Modifié
+
+- Documentation d'installation et FAQ adaptées au patch vidéo.
+- Archive de release désormais complète : scénario et vidéos sous-titrées.
+
 ## [1.0.0] — 2026-08-20
 
 ### Ajouté

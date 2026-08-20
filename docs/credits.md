@@ -16,6 +16,8 @@ son scénario, ses personnages, ses illustrations, ses musiques et son moteur ap
 ## Outils
 
 - **FreeMote** et ses outils PSB, utilisés pour reconstruire les archives de scénario.
+- **FFmpeg/libass**, utilisés pour le décodage VP9 et l'incrustation des sous-titres vidéo.
+- **Tesseract OCR**, utilisé pour assister l'extraction du texte et de ses timings.
 - Les outils locaux d'extraction, de contrôle structurel et de réinjection développés
   pour cette traduction.
 

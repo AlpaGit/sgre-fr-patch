@@ -7,7 +7,8 @@ Le scénario anglais du jeu est traduit en français, avec une terminologie harm
 partir des sous-titres français de la série animée de 2011 : **Oopa**, **Oopa en métal**,
 **Ruka**, **D-mail**, **ligne d'univers**, **Reading Steiner**, **Champ Attracteur**, etc.
 
-> **Statut — v1.0.0 :** scénario jouable du prologue à la True End, routes comprises.
+> **Statut — v1.1.0 :** scénario jouable du prologue à la True End, routes comprises,
+> avec sous-titres français ajoutés aux trois vidéos d'introduction.
 > Les retours de jeu restent indispensables pour corriger les coquilles et améliorer les
 > formulations.
 
@@ -25,9 +26,8 @@ Le patch est autonome : aucun autre patch ni outil n'est nécessaire pour jouer.
 3. Double-cliquez sur **`install.bat`**.
 4. Lancez le jeu normalement via Steam.
 
-L'installeur détecte les bibliothèques Steam, sauvegarde les archives anglaises sous les
-noms `scenario_info.psb.m.bak` et `scenario_body.bin.bak`, puis copie la VF dans
-`wind3d11data`.
+L'installeur détecte les bibliothèques Steam, sauvegarde les archives anglaises et les trois
+vidéos originales, puis copie la VF dans `wind3d11data`.
 
 Pour une installation manuelle ou Steam Deck, consultez le
 [guide détaillé](docs/installation.md).
@@ -50,7 +50,7 @@ l'intégrité des fichiers*.
 | Chapitre 9 / route Ruka | Traduit |
 | Chapitre 10 / routes Mayuri et Kurisu | Traduit |
 | Chapitre 11 / True End | Traduit |
-| Vidéos du prologue avec sous-titres incrustés | Pas encore traduites |
+| Vidéos du prologue avec texte incrusté | Sous-titrées en français |
 | Interface et éléments graphiques | Pas encore traduits |
 
 Le pipeline recense **23 875 segments traduisibles**, dont **23 821 diffèrent de la source
@@ -59,12 +59,17 @@ onomatopées et formulations identiques dans les deux langues.
 
 ## Limitations connues
 
-- Trois vidéos WebM du prologue contiennent des sous-titres anglais incrustés et chiffrés.
-  Elles ne font pas partie de cette première release.
+- Le texte anglais d'origine reste visible au centre des vidéos d'introduction, car il est
+  incrusté dans l'image. La v1.1.0 ajoute la traduction française au bas de l'écran, avec les
+  mêmes temps d'apparition et de disparition.
 - L'interface, certains libellés système et les images comportant du texte restent en anglais.
 - La VF a été traduite depuis la localisation anglaise, avec les sous-titres français de
   l'anime comme référence terminologique. Il ne s'agit pas d'une retraduction japonaise.
 - Cette première version nécessite encore une passe de test en conditions réelles.
+
+Les vidéos ont été déchiffrées, sous-titrées, réencodées en VP9 puis rechiffrées pour le moteur.
+Les timings suivent directement l'apparition du texte anglais, détectée par comparaison d'images
+et OCR. Les fichiers ASS utilisés sont publiés dans [`sources/video`](sources/video).
 
 ## Signaler un problème
 

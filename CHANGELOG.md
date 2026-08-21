@@ -3,21 +3,6 @@
 Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) et la numérotation
 suit [SemVer](https://semver.org/lang/fr/).
 
-## [1.2.0] — 2026-08-21
-
-### Ajouté
-
-- Traduction française de 632 sprites d'interface : menus, paramètres, téléphone,
-  historique, glossaire, bibliothèque, aide, sauvegarde et chargement.
-- Installation, sauvegarde, vérification SHA-256 et restauration des archives
-  `motion_info.psb.m` et `motion_body.bin`.
-
-### Modifié
-
-- Les huit grands logos décoratifs restent dans leur version anglaise originale afin de
-  préserver leur typographie et les circuits intégrés au lettrage.
-- Documentation et installeur adaptés au patch d'interface.
-
 ## [1.1.0] — 2026-08-21
 
 ### Ajouté

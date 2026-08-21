@@ -11,8 +11,6 @@ desktop.ini
 # Local release artifacts
 dist/
 patch/movie/*.webm
-patch/motion_body.bin
-patch/motion_info.psb.m
 *.zip
 *.tmp
 *.log

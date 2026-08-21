@@ -7,8 +7,8 @@ Le scénario anglais du jeu est traduit en français, avec une terminologie harm
 partir des sous-titres français de la série animée de 2011 : **Oopa**, **Oopa en métal**,
 **Ruka**, **D-mail**, **ligne d'univers**, **Reading Steiner**, **Champ Attracteur**, etc.
 
-> **Statut — v1.1.0 :** scénario jouable du prologue à la True End, routes comprises,
-> avec sous-titres français ajoutés aux trois vidéos d'introduction.
+> **Statut — v1.2.0 :** scénario jouable du prologue à la True End, routes comprises,
+> sous-titres français sur les trois vidéos d'introduction et interface traduite.
 > Les retours de jeu restent indispensables pour corriger les coquilles et améliorer les
 > formulations.
 
@@ -26,15 +26,16 @@ Le patch est autonome : aucun autre patch ni outil n'est nécessaire pour jouer.
 3. Double-cliquez sur **`install.bat`**.
 4. Lancez le jeu normalement via Steam.
 
-L'installeur détecte les bibliothèques Steam, sauvegarde les archives anglaises et les trois
-vidéos originales, puis copie la VF dans `wind3d11data`.
+L'installeur détecte les bibliothèques Steam, sauvegarde les archives anglaises du scénario
+et de l'interface ainsi que les trois vidéos originales, puis copie la VF dans `wind3d11data`.
 
 Pour une installation manuelle ou Steam Deck, consultez le
 [guide détaillé](docs/installation.md).
 
 ## Désinstallation
 
-Double-cliquez sur **`uninstall.bat`**. Les deux sauvegardes `.bak` sont restaurées.
+Double-cliquez sur **`uninstall.bat`**. Les quatre sauvegardes `.bak` et les vidéos originales
+sont restaurées.
 
 Si elles ont été supprimées, utilisez Steam : *Propriétés → Fichiers installés → Vérifier
 l'intégrité des fichiers*.
@@ -51,7 +52,7 @@ l'intégrité des fichiers*.
 | Chapitre 10 / routes Mayuri et Kurisu | Traduit |
 | Chapitre 11 / True End | Traduit |
 | Vidéos du prologue avec texte incrusté | Sous-titrées en français |
-| Interface et éléments graphiques | Pas encore traduits |
+| Interface et éléments graphiques | Traduits |
 
 Le pipeline recense **23 875 segments traduisibles**, dont **23 821 diffèrent de la source
 anglaise (99,8 %)**. Le faible écart correspond principalement aux noms propres, sigles,
@@ -62,7 +63,9 @@ onomatopées et formulations identiques dans les deux langues.
 - Le texte anglais d'origine reste visible au centre des vidéos d'introduction, car il est
   incrusté dans l'image. La v1.1.0 ajoute la traduction française au bas de l'écran, avec les
   mêmes temps d'apparition et de disparition.
-- L'interface, certains libellés système et les images comportant du texte restent en anglais.
+- Les grands logos décoratifs (`CONFIG`, `BACKLOG`, `TIPS LIST`, `LIBRARY`, `OBSERVER`,
+  `SAVE`, `LOAD` et `QUICK LOAD`) restent volontairement en anglais : leur lettrage est
+  directement imbriqué dans les circuits du dessin original.
 - La VF a été traduite depuis la localisation anglaise, avec les sous-titres français de
   l'anime comme référence terminologique. Il ne s'agit pas d'une retraduction japonaise.
 - Cette première version nécessite encore une passe de test en conditions réelles.

@@ -74,14 +74,20 @@ Write-Step 2 2 "Restauration des fichiers originaux..."
 $dataDir = Join-Path $gameDir 'wind3d11data'
 $targetInfo = Join-Path $dataDir 'scenario_info.psb.m'
 $targetBody = Join-Path $dataDir 'scenario_body.bin'
+$targetMotionInfo = Join-Path $dataDir 'motion_info.psb.m'
+$targetMotionBody = Join-Path $dataDir 'motion_body.bin'
 $backupInfo = "$targetInfo.bak"
 $backupBody = "$targetBody.bak"
+$backupMotionInfo = "$targetMotionInfo.bak"
+$backupMotionBody = "$targetMotionBody.bak"
 $movieDir = Join-Path $dataDir 'movie'
 $movieNames = @('prologue01_en.webm', 'prologue02_en.webm', 'prologue03_en.webm')
 
 $missing = @()
 if (-not (Test-Path -LiteralPath $backupInfo)) { $missing += 'scenario_info.psb.m.bak' }
 if (-not (Test-Path -LiteralPath $backupBody)) { $missing += 'scenario_body.bin.bak' }
+if (-not (Test-Path -LiteralPath $backupMotionInfo)) { $missing += 'motion_info.psb.m.bak' }
+if (-not (Test-Path -LiteralPath $backupMotionBody)) { $missing += 'motion_body.bin.bak' }
 foreach ($name in $movieNames) {
     $backup = "$(Join-Path $movieDir $name).frpatch.bak"
     if (-not (Test-Path -LiteralPath $backup)) { $missing += "$name.frpatch.bak" }
@@ -94,11 +100,13 @@ if ($missing.Count -gt 0) {
 
 Copy-Item -LiteralPath $backupInfo -Destination $targetInfo -Force
 Copy-Item -LiteralPath $backupBody -Destination $targetBody -Force
+Copy-Item -LiteralPath $backupMotionInfo -Destination $targetMotionInfo -Force
+Copy-Item -LiteralPath $backupMotionBody -Destination $targetMotionBody -Force
 foreach ($name in $movieNames) {
     $target = Join-Path $movieDir $name
     Copy-Item -LiteralPath "$target.frpatch.bak" -Destination $target -Force
 }
-Write-Ok "Les archives et les trois videos originales ont ete restaurees."
+Write-Ok "Le scenario, l'interface et les trois videos originales ont ete restaures."
 
 Write-Host ""
 Write-Host "  ============================================================" -ForegroundColor Green

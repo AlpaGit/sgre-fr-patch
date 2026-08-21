@@ -2,8 +2,8 @@
 
 ### Le jeu reste en anglais après l'installation
 
-Vérifiez que l'installeur a ciblé le bon dossier `SGRE` et que les deux fichiers ont été
-remplacés dans `wind3d11data`. Évitez de lancer l'installeur depuis l'intérieur du ZIP.
+Vérifiez que l'installeur a ciblé le bon dossier `SGRE` et que les quatre archives ont été
+remplacées dans `wind3d11data`. Évitez de lancer l'installeur depuis l'intérieur du ZIP.
 
 ### Mes sauvegardes de partie sont-elles compatibles ?
 
@@ -22,8 +22,10 @@ comparaison d'images et OCR.
 
 ### Pourquoi certains menus restent-ils en anglais ?
 
-La v1.0.0 couvre les archives de scénario. Les textes d'interface et certains éléments
-graphiques sont stockés ailleurs et feront l'objet d'un travail séparé.
+La majorité de l'interface est traduite depuis la v1.2.0. Les grands logos décoratifs
+`CONFIG`, `BACKLOG`, `TIPS LIST`, `LIBRARY`, `OBSERVER`, `SAVE`, `LOAD` et `QUICK LOAD`
+restent volontairement en anglais. Leur police est imbriquée dans des circuits électroniques ;
+remplacer uniquement les lettres dégraderait fortement le dessin original.
 
 ### La traduction vient-elle du japonais ?
 

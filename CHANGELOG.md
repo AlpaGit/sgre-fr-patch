@@ -3,6 +3,18 @@
 Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) et la numérotation
 suit [SemVer](https://semver.org/lang/fr/).
 
+## [1.2.1] — 2026-08-21
+
+### Corrigé
+
+- Retrait temporaire des archives d'interface `motion_*` publiées dans la v1.2.0 : leur
+  reconstruction provoquait un écran noir puis l'arrêt du jeu au démarrage.
+- Retour au paquet stable contenant le scénario français et les trois vidéos sous-titrées.
+
+### Sécurité
+
+- La v1.2.0 défectueuse a été retirée des releases publiques.
+
 ## [1.1.0] — 2026-08-21
 
 ### Ajouté

@@ -22,8 +22,9 @@ comparaison d'images et OCR.
 
 ### Pourquoi certains menus restent-ils en anglais ?
 
-La v1.0.0 couvre les archives de scénario. Les textes d'interface et certains éléments
-graphiques sont stockés ailleurs et feront l'objet d'un travail séparé.
+La version stable couvre les archives de scénario et les vidéos. Une première version du patch
+d'interface a été retirée, car la reconstruction des archives `motion_*` provoquait un écran
+noir au démarrage. Elle sera republiée une fois le format corrigé et validé en jeu.
 
 ### La traduction vient-elle du japonais ?
 

@@ -7,8 +7,9 @@ Le scénario anglais du jeu est traduit en français, avec une terminologie harm
 partir des sous-titres français de la série animée de 2011 : **Oopa**, **Oopa en métal**,
 **Ruka**, **D-mail**, **ligne d'univers**, **Reading Steiner**, **Champ Attracteur**, etc.
 
-> **Statut — v1.1.0 :** scénario jouable du prologue à la True End, routes comprises,
-> avec sous-titres français ajoutés aux trois vidéos d'introduction.
+> **Statut — v1.2.1 :** scénario jouable du prologue à la True End, routes comprises,
+> avec sous-titres français ajoutés aux trois vidéos d'introduction. Cette version stable
+> retire temporairement le patch d'interface de la v1.2.0, qui empêchait le jeu de démarrer.
 > Les retours de jeu restent indispensables pour corriger les coquilles et améliorer les
 > formulations.
 
@@ -63,6 +64,7 @@ onomatopées et formulations identiques dans les deux langues.
   incrusté dans l'image. La v1.1.0 ajoute la traduction française au bas de l'écran, avec les
   mêmes temps d'apparition et de disparition.
 - L'interface, certains libellés système et les images comportant du texte restent en anglais.
+  Leur traduction reviendra après correction du format des archives `motion_*`.
 - La VF a été traduite depuis la localisation anglaise, avec les sous-titres français de
   l'anime comme référence terminologique. Il ne s'agit pas d'une retraduction japonaise.
 - Cette première version nécessite encore une passe de test en conditions réelles.

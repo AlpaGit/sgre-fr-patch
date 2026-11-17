@@ -1,89 +1,48 @@
-# STEINS;GATE RE:BOOT — Traduction française
+# STEINS;GATE RE:BOOT : traduction française
 
-Patch de traduction française non officiel pour **STEINS;GATE RE:BOOT**, version Steam
-(*app id 4012810*).
-
-Le scénario anglais du jeu est traduit en français, avec une terminologie harmonisée à
-partir des sous-titres français de la série animée de 2011 : **Oopa**, **Oopa en métal**,
-**Ruka**, **D-mail**, **ligne d'univers**, **Reading Steiner**, **Champ Attracteur**, etc.
-
-> **Statut — v1.2.1 :** scénario jouable du prologue à la True End, routes comprises,
-> avec sous-titres français ajoutés aux trois vidéos d'introduction. Cette version stable
-> retire temporairement le patch d'interface de la v1.2.0, qui empêchait le jeu de démarrer.
-> Les retours de jeu restent indispensables pour corriger les coquilles et améliorer les
-> formulations.
-
-## Pré-requis
-
-- Une copie légitime de **[STEINS;GATE RE:BOOT](https://store.steampowered.com/app/4012810/)** sur Steam.
-- Windows 10 ou 11 pour l'installeur automatique.
-
-Le patch est autonome : aucun autre patch ni outil n'est nécessaire pour jouer.
+Patch de traduction française non officiel pour **STEINS;GATE RE:BOOT** sur Steam
+(app 4012810). Il couvre le scénario du prologue à la True End, routes comprises,
+et ajoute des sous-titres français aux trois vidéos d'introduction. Il ne modifie
+pas les archives d'interface.
 
 ## Installation
 
-1. Téléchargez l'archive `.zip` de la [dernière release](../../releases/latest).
-2. Décompressez-la entièrement.
-3. Double-cliquez sur **`install.bat`**.
-4. Lancez le jeu normalement via Steam.
+**La v1.2.2 cible la version Windows du jeu, build Steam 25953359.**
 
-L'installeur détecte les bibliothèques Steam, sauvegarde les archives anglaises et les trois
-vidéos originales, puis copie la VF dans `wind3d11data`.
+1. Fermez le jeu. Si un ancien patch ou un autre mod est installé, vérifiez d'abord
+   l'intégrité des fichiers du jeu dans Steam.
+2. Téléchargez **`sgre-fr-patch-v1.2.2.zip`** depuis la [release](../../releases/tag/v1.2.2).
+   Les archives « Source code » ne contiennent pas les vidéos.
+3. Décompressez le ZIP, puis double-cliquez sur **`install.bat`**.
+4. Relancez le jeu via Steam et sélectionnez l'anglais pour afficher la traduction.
 
-Pour une installation manuelle ou Steam Deck, consultez le
-[guide détaillé](docs/installation.md).
+Aucun outil supplémentaire n'est nécessaire. L'installeur vérifie le build et les fichiers,
+puis sauvegarde les originaux de ce build avant de les remplacer.
 
-## Désinstallation
+## Retour à l'anglais
 
-Double-cliquez sur **`uninstall.bat`**. Les deux sauvegardes `.bak` sont restaurées.
+Fermez le jeu et utilisez **`uninstall.bat` de la v1.2.2**. N'utilisez pas le
+désinstalleur d'une version précédente : il peut restaurer des fichiers périmés.
+Si Steam a changé de build, utilisez la vérification d'intégrité dans Steam.
 
-Si elles ont été supprimées, utilisez Steam : *Propriétés → Fichiers installés → Vérifier
-l'intégrité des fichiers*.
+Voir le [guide d'installation](docs/installation.md) et la [FAQ](docs/faq.md).
 
-## Contenu traduit
+## Traduction et limitations
 
-| Contenu | Statut |
-|---|---|
-| Prologue scénarisé | Traduit |
-| Chapitres 1 à 6 | Traduits |
-| Chapitre 7 / route Suzuha | Traduit |
-| Chapitre 8 / route Faris | Traduit |
-| Chapitre 9 / route Ruka | Traduit |
-| Chapitre 10 / routes Mayuri et Kurisu | Traduit |
-| Chapitre 11 / True End | Traduit |
-| Vidéos du prologue avec texte incrusté | Sous-titrées en français |
-| Interface et éléments graphiques | Pas encore traduits |
+La traduction part de la localisation anglaise et reprend la terminologie française
+de l'anime de 2011 : Oopa, Ruka, D-mail, ligne d'univers, Reading Steiner, etc.
+Le texte anglais reste visible dans les vidéos où il est incrusté dans l'image.
+Les trois vidéos sous-titrées sont reprises de la v1.2.1 ; la modification apportée
+par Steam au fichier original de la première vidéo n'a pas été reportée.
 
-Le pipeline recense **23 875 segments traduisibles**, dont **23 821 diffèrent de la source
-anglaise (99,8 %)**. Le faible écart correspond principalement aux noms propres, sigles,
-onomatopées et formulations identiques dans les deux langues.
-
-## Limitations connues
-
-- Le texte anglais d'origine reste visible au centre des vidéos d'introduction, car il est
-  incrusté dans l'image. La v1.1.0 ajoute la traduction française au bas de l'écran, avec les
-  mêmes temps d'apparition et de disparition.
-- L'interface, certains libellés système et les images comportant du texte restent en anglais.
-  Leur traduction reviendra après correction du format des archives `motion_*`.
-- La VF a été traduite depuis la localisation anglaise, avec les sous-titres français de
-  l'anime comme référence terminologique. Il ne s'agit pas d'une retraduction japonaise.
-- Cette première version nécessite encore une passe de test en conditions réelles.
-
-Les vidéos ont été déchiffrées, sous-titrées, réencodées en VP9 puis rechiffrées pour le moteur.
-Les timings suivent directement l'apparition du texte anglais, détectée par comparaison d'images
-et OCR. Les fichiers ASS utilisés sont publiés dans [`sources/video`](sources/video).
-
-## Signaler un problème
-
-Ouvrez une [issue](../../issues) en indiquant le chapitre, le contexte, la phrase affichée
-et, si possible, une capture d'écran. Voir aussi [CONTRIBUTING.md](CONTRIBUTING.md).
+Les archives de scénario ont été vérifiées hors jeu. Le démarrage et la lecture
+en jeu avec cette version restent à confirmer. Pour signaler un problème,
+[ouvrez une issue](../../issues) avec le chapitre, le contexte et, si possible,
+une capture. Les outils de reconstruction sont décrits dans [tools/README.md](tools/README.md).
 
 ## Crédits et mentions légales
 
-Consultez [docs/credits.md](docs/credits.md) et [LICENSE](LICENSE).
-
-Ce projet fan-made est gratuit, non officiel et sans lien avec MAGES. Aucun exécutable,
-audio, vidéo ou élément graphique original non modifié n'est distribué. Vous devez posséder
-le jeu sur Steam pour utiliser le patch.
+Consultez les [crédits](docs/credits.md) et la [licence](LICENSE). Ce projet est
+gratuit et sans lien avec MAGES. Une copie légitime du jeu sur Steam est nécessaire.
 
 *El Psy Congroo.*

@@ -2,13 +2,15 @@
 
 ### Le jeu reste en anglais après l'installation
 
-Vérifiez que l'installeur a ciblé le bon dossier `SGRE` et que les deux fichiers ont été
-remplacés dans `wind3d11data`. Évitez de lancer l'installeur depuis l'intérieur du ZIP.
+Choisissez l'anglais dans le jeu : le patch remplace cette localisation. Vérifiez aussi
+que l'installeur a ciblé le bon dossier `SGRE`. Une vérification d'intégrité ou une mise à
+jour Steam peut retirer le patch. Ne le réinstallez que si le build est pris en charge.
 
 ### Mes sauvegardes de partie sont-elles compatibles ?
 
 Oui. Le patch remplace les archives de scénario, pas les sauvegardes utilisateur. Vous
-pouvez revenir à l'anglais avec `uninstall.bat` sans perdre votre progression.
+pouvez revenir à l'anglais avec le `uninstall.bat` du ZIP v1.2.2 sans perdre votre progression.
+Ne lancez pas le désinstalleur d'une ancienne version.
 
 ### Pourquoi le texte anglais reste-t-il visible dans les vidéos du prologue ?
 
@@ -33,8 +35,7 @@ de l'anime ont servi de référence pour les noms, surnoms et termes récurrents
 
 ### Le patch fonctionne-t-il sur Steam Deck ?
 
-La copie manuelle devrait fonctionner sous Proton. L'installeur `.bat` est réservé à
-Windows; suivez la section Steam Deck du [guide](installation.md).
+Le patch v1.2.2 cible le dépôt Windows. Steam Deck et Linux ne sont pas validés.
 
 ### J'ai trouvé une faute ou un contresens
 

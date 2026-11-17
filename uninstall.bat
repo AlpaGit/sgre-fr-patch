@@ -1,3 +1,6 @@
 @echo off
-REM Restaure les archives de scenario originales.
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0installer\uninstall.ps1"
+setlocal
+"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -ExecutionPolicy Bypass -File "%~dp0installer\uninstall.ps1" -Prompt %*
+set "result=%errorlevel%"
+pause
+exit /b %result%

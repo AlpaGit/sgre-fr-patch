@@ -16,3 +16,4 @@ patch/motion_info.psb.m
 *.zip
 *.tmp
 *.log
+__pycache__/

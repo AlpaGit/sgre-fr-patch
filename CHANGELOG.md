@@ -3,6 +3,17 @@
 Le format suit [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/) et la numérotation
 suit [SemVer](https://semver.org/lang/fr/).
 
+## [1.2.2] (2026-11-18)
+
+- Adaptation au build Steam Windows 25953359 : 161 scènes françaises reprises,
+  26 recompilées avec les scripts Steam à jour, 2 conservées depuis Steam.
+- Retouches de traduction pour 16 lignes dont le texte anglais a changé.
+- Installation et restauration protégées par des empreintes et des sauvegardes
+  propres à ce build. Les anciens fichiers de sauvegarde sont ignorés.
+- Les trois vidéos sous-titrées sont reprises de la v1.2.1. L'interface n'est pas modifiée.
+- Archives et installeur vérifiés hors jeu. Le démarrage et la lecture en jeu
+  restent à confirmer.
+
 ## [1.2.1] — 2026-08-21
 
 ### Corrigé
